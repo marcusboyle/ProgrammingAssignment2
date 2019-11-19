@@ -1,9 +1,8 @@
-## makeCacheMatrix() is used as input for cacheSolve(), allowing
-## us to set the values for the matrix and its inverse as
-## well as retrieve/"get" them. cacheSolve() either calculates the
-## inverse of the matrix passed into makeCacheMatrix() -- storing
-## it in a cache and then returning it -- or, if the inverse has
-## previously been cached, it simply returns the cached inverse.
+## makeCacheMatrix() takes a matrix as input, and provides us with a
+## list of functions to "get" and "set" the values for this matrix
+## and its inverse. This list is then passed to cacheSolve(), which
+## either (a) calculates the matrix inverse, caches and returns it,
+## or (b) simply returns the cached value if it exists.
 
 ## makeCacheMatrix(): Takes a matrix as input, then creates 4
 ## functions: getter+setter for the matrix & getter+setter for the
@@ -34,7 +33,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 ## cacheSolve(): Takes the function "makeCacheMatrix()" as input
-## (giving us getter/setter functions for the matrix and its inverse).
+## (giving us getter/setter functions for the matrix and its inverse),
+## -- plus, optionally, additional arguments for "solve()".
 ## If the inverse of the matrix passed into makeCacheMatrix() has
 ## been cached, then load the cache -- otherwise get the matrix and
 ## calculate its inverse, which will be cached and returned.
