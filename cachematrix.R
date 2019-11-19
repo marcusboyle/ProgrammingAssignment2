@@ -14,8 +14,7 @@ makeCacheMatrix <- function(x = matrix()) {
     ## Matrix functions
     # Setter: takes a matrix and stores it in "x", resets cache
     set_mat <- function(mat) {
-        # "<<-" modifies the variable in the parent function
-        x <<- mat
+        x <<- mat  # "<<-" modifies the variable in the parent function
         inv_cache <<- NULL
     }
     # Getter: returns the matrix "x"
